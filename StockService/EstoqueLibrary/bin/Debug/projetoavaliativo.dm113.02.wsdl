@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://projetoavaliativo.dm113/02" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://projetoavaliativo.dm113/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://projetoavaliativo.dm113/02/Imports">
+      <xsd:import namespace="http://projetoavaliativo.dm113/02" />
+      <xsd:import namespace="http://projetoavaliativo.dm113/01" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/EstoqueEntityModel" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/EstoqueLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicoEstoqueV2_CheckStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStock" />
+  </wsdl:message>
+  <wsdl:message name="IServicoEstoqueV2_CheckStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoEstoqueV2_AddStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStock" />
+  </wsdl:message>
+  <wsdl:message name="IServicoEstoqueV2_AddStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicoEstoqueV2_RemoveStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveStock" />
+  </wsdl:message>
+  <wsdl:message name="IServicoEstoqueV2_RemoveStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveStockResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicoEstoqueV2">
+    <wsdl:operation name="CheckStock">
+      <wsdl:input wsaw:Action="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/CheckStock" message="tns:IServicoEstoqueV2_CheckStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/CheckStockResponse" message="tns:IServicoEstoqueV2_CheckStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStock">
+      <wsdl:input wsaw:Action="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/AddStock" message="tns:IServicoEstoqueV2_AddStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/AddStockResponse" message="tns:IServicoEstoqueV2_AddStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStock">
+      <wsdl:input wsaw:Action="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/RemoveStock" message="tns:IServicoEstoqueV2_RemoveStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/RemoveStockResponse" message="tns:IServicoEstoqueV2_RemoveStock_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DefaultBinding_IServicoEstoqueV2" type="tns:IServicoEstoqueV2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckStock">
+      <soap:operation soapAction="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/CheckStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStock">
+      <soap:operation soapAction="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/AddStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStock">
+      <soap:operation soapAction="http://projetoavaliativo.dm113/02/IServicoEstoqueV2/RemoveStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>
